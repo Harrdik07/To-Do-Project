@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/static/stylesheets/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="todo-container">
+      <h2 style="color:black; font-family: sans-serif;">To Do List</h2>
+      <div class="todo">
+        <form action="/" method="POST" class="todo-header">
+          <input type="text" name="title">
+          <button type="submit"><span class="fas fa-plus"></span></button>
+        </form>
+         <ul class="todo-list">
+            <li class="todo-list-item">
+              <form class="edit-form" action="/edit/" method="POST">
+                <input type="text" value="<%= task.title %>" name="title" style="font-family: sans-serif;font-weight: bold;">
+                <input type="hidden" value="<%= task.id %>" name="taskId">
+                <button type="submit" style="font-family: sans-serif;">Confirm</button>
+                <a href="/" class="cancel" style="font-family: sans-serif;">Cancel</a>
+              </form>
+            </li>      
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
